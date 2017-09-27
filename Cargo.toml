@@ -1,0 +1,11 @@
+[package]
+name = "IronTest"
+version = "0.1.0"
+authors = ["Philip Van Raalte"]
+
+[dependencies]
+iron = "0.5.*" #v0.5.1
+router = "*" #v0.5.1
+staticfile = "*" #v0.4.0
+time = "0.1.*"
+mount = "*"
