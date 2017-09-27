@@ -4,13 +4,13 @@
  *
  * A simple web server made with Iron framework
  */
+#![allow(non_snake_case)]
 extern crate iron;
 extern crate router;
 extern crate mount;
 extern crate staticfile;
 
-use iron::status;
-use iron::{Iron, Request, Response, IronResult};
+use iron::{Iron, Request, Response, IronResult, status};
 
 use mount::Mount;
 use router::Router;
@@ -30,8 +30,8 @@ fn main() {
 
     let mut mount = Mount::new();
     mount
-        .mount("/", router)
-        .mount("/docs/", Static::new(Path::new("target/doc")));
+        //.mount("/", router)
+        .mount("/", Static::new(Path::new("target/doc")));
 
     Iron::new(mount).http("localhost:3000").unwrap();
 }
